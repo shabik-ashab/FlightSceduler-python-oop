@@ -10,6 +10,6 @@ class Airport:
         self.city = city
 
     def __repr__(self) -> str:
-        return f"Airport: {self.name} in: {self.country} lattitude {self.lat} longitude: {self.long} "
+        return f"Airport: {self.name} in: {self.country} lattitude {self.lat} longitude: {self.long} rate: {self.rate} "
 
 
