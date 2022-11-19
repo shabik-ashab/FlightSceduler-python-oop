@@ -11,4 +11,7 @@ class Aircraft:
 
     def __repr__(self) -> str:
         return f"Aircraft made by: {self.brand} code: {self.code} type: {self.type} range: {self.flight_range}"
-        
+
+
+
+    
