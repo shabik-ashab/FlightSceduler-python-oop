@@ -5,8 +5,9 @@ from math import radians, sin, cos, atan2, sqrt
 
 class AllAirports:
     def __init__(self) -> None:
-        self.load_airport_data('./data/airport.csv')
         self.airports = None
+        self.load_airport_data('./data/airport.csv')
+        
 
     def load_airport_data(self, file_path):
         airports = {}
@@ -43,8 +44,7 @@ class AllAirports:
                 print(e)
 
             self.airports = airports
-            for airport in airports.items():
-                print(airport)
+            
 
     def get_distance_between_two_airports(self, lat1, lon1, lat2, lon2):
         radius = 6371
@@ -58,8 +58,17 @@ class AllAirports:
     def distance_between_two_airports(self, airport1_code, airport2_code):
         airport1 = self.airports[airport1_code]
         airport2 = self.airports[airport2_code]
-        distance = self.get_distance_between_two_airports(airport1.lat, airport1.lon, airport2.lat, airport2.lon)
+        distance = self.get_distance_between_two_airports(airport1.lat, airport1.long, airport2.lat, airport2.long)
         return distance
 
+    def ticket_price(self, start, end):
+        distance = self.distance_between_two_airports(start, end)
+        airport1 = self.airports[start]
+        fare = distance * airport1.rate
+        return fare
 
-AllAirports()
+
+world_airports = AllAirports()
+
+fare = world_airports.ticket_price('DAC', 'PRA')
+print(fare)

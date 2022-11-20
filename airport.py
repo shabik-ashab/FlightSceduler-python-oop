@@ -3,9 +3,9 @@ class Airport:
     def __init__(self, code, name, country, city, lat, long, rate) -> None:
         self.name = name
         self.country = country
-        self.lat = lat
-        self.long = long
-        self.rate = rate
+        self.lat = float(lat)
+        self.long = float(long)
+        self.rate = float(rate)
         self.code = code 
         self.city = city
 
