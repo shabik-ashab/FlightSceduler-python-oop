@@ -17,19 +17,20 @@ class TravelAgent:
         trip = Trip([start,end], aircraft, price, start_date)
         return trip
 
-    def trip_one_city_two_way(self):
-        pass
+    def trip_one_city_round(self, start, end, start_date):
+        trip1 = self.trip_one_city_one_way(start, end, start_date)
+        trip2 = self.trip_one_city_one_way(end, start, start_date)
+        return [trip1, trip2]
 
     def trip_two_city_one_way(self, trip_info, start_date1, start_date):
         trip1 = self.trip_one_city_one_way(trip_info[0], trip_info[1], start_date)
         trip2 = self.trip_one_city_one_way(trip_info[1], trip_info[2], start_date)
         return [trip1, trip2]
 
-
     def trip_two_city_two_way(self):
         pass
 
-    def trip_multi_city_one_way_fix_round(self, trip_info, start_date):
+    def trip_multi_city_one_way(self, trip_info, start_date):
         trips = []
         for i in range(0, len(trip_info) - 1):
             trip = self.trip_one_city_one_way(trip_info[i], trip_info[i+1], start_date)
