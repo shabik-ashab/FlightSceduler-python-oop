@@ -29,8 +29,12 @@ class TravelAgent:
     def trip_two_city_two_way(self):
         pass
 
-    def trip_multi_city_one_way_fix_round(self):
-        pass
+    def trip_multi_city_one_way_fix_round(self, trip_info, start_date):
+        trips = []
+        for i in range(0, len(trip_info) - 1):
+            trip = self.trip_one_city_one_way(trip_info[i], trip_info[i+1], start_date)
+            trips.append(trip)
+        return trips
 
 
     def __repr__(self) -> str:
