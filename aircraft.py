@@ -4,7 +4,7 @@ class Aircraft:
         self.brand = brand
         self.code = code
         self.type = type
-        self.flight_range = flight_range
+        self.flight_range = float(flight_range)
 
     def get_brand(self):
         return self.brand

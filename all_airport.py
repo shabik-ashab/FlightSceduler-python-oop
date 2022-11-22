@@ -1,6 +1,8 @@
 import csv
-from airport import Airport
 from math import radians, sin, cos, atan2, sqrt
+
+from airport import Airport
+
 
 
 class AllAirports:
@@ -70,5 +72,5 @@ class AllAirports:
 
 world_airports = AllAirports()
 
-fare = world_airports.ticket_price('DAC', 'PRA')
-print(fare)
+# fare = world_airports.ticket_price('DAC', 'PRA')
+# print(fare)
